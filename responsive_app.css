@@ -1,0 +1,244 @@
+/* general styling */
+
+html {
+  font-size: 10px;
+  height: 100%;
+  overflow: hidden;
+  
+}
+
+body {
+  width: 100%;
+  height: inherit;
+  background-image: url("theremin.jpg"); 
+  background-size: cover;
+  color: white;
+
+}
+
+#vol {
+  transform: rotate(-0.25turn);
+  width: 680px;
+  position: absolute;
+  right: -325px;
+  top: 400px;
+  opacity: 0;
+}
+
+#freq {
+  width: 1400px;
+  position: absolute;
+  top: 750px;
+  left: 18px;
+  opacity: 0;
+}
+
+#hertz {
+  position: absolute;
+  left: 800px;
+  bottom: -25px;
+  font-size: 32px;
+}
+
+#scale{
+  position: absolute;
+  left: 600px;
+  bottom: -25px;
+  font-size: 32px;
+}
+
+#sliderValue, #outputText {
+  font-size: 24px;
+}
+
+.note-label {
+  position: absolute;
+  top: 730px;
+  font-size: 14px;
+  transform: translateX(-50%);
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+/* カーソルハイライト用スタイル */
+.cursor-highlight {
+  position: absolute;
+  width: 50px; /* ハイライトのサイズ */
+  height: 50px;
+  background-color: rgba(255, 255, 0, 0.5); /* 半透明の黄色い円 */
+  border-radius: 50%; /* 円形にする */
+  pointer-events: none; /* クリックを無効にして、他の要素に干渉しないようにする */
+  transform: translate(-50%, -50%); /* カーソルの中心に合わせる */
+  z-index: 1000; /* 他の要素より上に表示するための設定 */
+  transition: transform 0.1s ease; /* スムーズに追従させる */
+}
+
+.piano {
+  display: flex;
+  position: relative;
+}
+
+.key {
+  width: 60px;
+  height: 200px;
+  border: 1.5px solid #000;
+}
+
+.key.white {
+  background-color: #fff;
+  margin: 0 -12px;
+  z-index: 1;
+}
+
+.key.black {
+  background-color: #000;
+  width: 35px;
+  height: 115px;
+  position: relative;
+  left: 8px;
+  margin-left: -20px;
+  z-index: 2;
+}
+
+#E {
+  width: 77px;
+}
+
+.circle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+#red-circle {
+  background-color: red;
+  left: 10px;
+  top: -50px;
+}
+
+#orange-circle {
+  background-color: orange;
+  left: 33px;
+  top: -150px;
+}
+
+#yellow-circle {
+  background-color: yellow;
+  left: 60px;
+  top: -100px;
+}
+
+#limegreen-circle {
+  background-color: limegreen;
+  left: 88px;
+  top: -200px;
+}
+
+#green-circle {
+  background-color: green;
+  left: 115px;
+  top: -150px;
+}
+
+#cyan-circle {
+  background-color: cyan;
+  left: 175px;
+  top: -175px;
+}
+
+#blue-circle {
+  background-color: blue;
+  left: 200px;
+  top: -275px;
+}
+
+#indigo-circle {
+  background-color: indigo;
+  left: 230px;
+  top: -225px;
+}
+
+#violet-circle {
+  background-color: violet;
+  left: 258px;
+  top: -325px;
+}
+
+#pink-circle {
+  background-color: pink;
+  left: 285px;
+  top: -275px;
+}
+
+#salmon-circle {
+  background-color: salmon;
+  left: 314px;
+  top: -375px;
+}
+
+#gold-circle {
+  background-color: gold;
+  left: 345px;
+  top: -325px;
+}
+
+
+
+
+/* Responsive adjustments for smartphones and tablets */
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  #vol, #freq {
+    width: 90vw;
+    left: 5vw;
+    top: 60vh;
+    opacity: 1;
+  }
+
+  #hertz, #scale {
+    font-size: 20px;
+    left: 50vw;
+    bottom: 10px;
+    transform: translateX(-50%);
+  }
+
+  .key {
+    width: 40px;
+    height: 120px;
+  }
+
+  .key.black {
+    width: 25px;
+    height: 80px;
+  }
+
+  .circle {
+    width: 15px;
+    height: 15px;
+  }
+
+  .cursor-highlight {
+    width: 30px;
+    height: 30px;
+  }
+
+  .note-label {
+    top: 60vh;
+    font-size: 12px;
+  }
+
+  #sliderValue, #outputText {
+    font-size: 18px;
+  }
+}
